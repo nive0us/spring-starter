@@ -6,14 +6,15 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
-import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
 
 @RepositoryRestResource
 public interface BookRepositoryRestResource extends JpaRepository<Book,Integer> {
 
     // Prevents GET /books/:id
     @Override
-    Book findOne(Integer id);
+    Optional<Book> findById(Integer id);
 
     // Prevents GET /books
     @Override
