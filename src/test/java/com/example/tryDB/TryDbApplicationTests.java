@@ -8,6 +8,9 @@ class TryDbApplicationTests {
 
 	@Test
 	void contextLoads() {
+		System.out.println( "this is unit test.");
+		System.out.println( "start to test.");
+
 	}
 
 }

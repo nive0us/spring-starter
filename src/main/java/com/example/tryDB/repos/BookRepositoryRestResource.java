@@ -14,7 +14,7 @@ public interface BookRepositoryRestResource extends JpaRepository<Book,Integer> 
 
     // Prevents GET /books/:id
     @Override
-    Optional<Book> findById(Integer id);
+    Book getOne(Integer id); // refer to JpaRepository document press F4
 
     // Prevents GET /books
     @Override

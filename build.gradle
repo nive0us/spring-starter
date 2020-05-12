@@ -36,6 +36,20 @@ dependencies {
     }
 }
 
+//Springfox provides support for Spring Data REST through its springfox-data-rest library.
+//The springfox-data-rest library's 2.9.2 version doesn't provide smooth integration with the Spring Boot 2 and Spring Data REST API.
+//Therefore, we'll use the 3.0.0-SNAPSHOT version of the Springfox libraries.
+
+
+repositories {
+    jcenter(){url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/'}
+}
+dependencies {
+    compile 'io.springfox:springfox-swagger2:3.0.0-SNAPSHOT'
+    compile 'io.springfox:springfox-swagger-ui:3.0.0-SNAPSHOT'
+    compile 'io.springfox:springfox-data-rest:3.0.0-SNAPSHOT'
+}
+
 test {
     useJUnitPlatform()
 }
