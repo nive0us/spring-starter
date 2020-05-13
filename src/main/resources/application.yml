@@ -11,10 +11,44 @@ spring:
     name: Admin Client (Book service)
 
   boot:
+
     admin:
       client:
-        url: http://localhost:8090
+        url: http://localhost:8090 # server's location
+
+#       username: ${spring.security.user.name}
+#       password: ${spring.security.user.password}
+
+        # 讓 admin server端可以存取 admin client(this application)
+        instance:
+          metadata:
+            user:
+              name:  ${spring.security.user.name}
+              password: ${spring.security.user.password}
+         # previous version using
+#        metadata:
+#          user.name: ${spring.security.user.name}
+#          user.password: ${spring.security.user.password}
 
 
+  security:
+    user:
+      name: admin
+      password: admin123
+
+
+# this application's port , not spring boot admin server's port
 server:
-  port: 8081
+  port: 8080
+
+#management:
+#  security:
+#    enabled: true
+
+
+# 直接开启和暴露所有端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

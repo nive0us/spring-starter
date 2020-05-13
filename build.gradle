@@ -29,6 +29,8 @@ dependencies {
     // spring boot admin client
     compile 'de.codecentric:spring-boot-admin-starter-client:2.1.0'
 
+    compile 'org.springframework.boot:spring-boot-starter-security'
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.h2database:h2'
