@@ -50,6 +50,9 @@ public class BookController {
     @ApiResponses(value = {@ApiResponse(code = 201, message = "存檔成功")})
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(value = "/v1/book", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+//    @PostMapping(value = "/v1/book", consumes = "text/plain;charset=UTF-8" ,  produces = "text/plain;charset=UTF-8" )
+
+
     public BookDto create(
             @ApiParam(required = true, value = "書本內容") @RequestBody BookDto bookDto) {
         Book book = new Book();

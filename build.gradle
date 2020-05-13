@@ -26,6 +26,9 @@ dependencies {
     // spring data CRUD
     implementation 'org.springframework.boot:spring-boot-starter-data-rest'
 
+    // spring boot admin client
+    compile 'de.codecentric:spring-boot-admin-starter-client:2.1.0'
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.h2database:h2'
@@ -39,8 +42,6 @@ dependencies {
 //Springfox provides support for Spring Data REST through its springfox-data-rest library.
 //The springfox-data-rest library's 2.9.2 version doesn't provide smooth integration with the Spring Boot 2 and Spring Data REST API.
 //Therefore, we'll use the 3.0.0-SNAPSHOT version of the Springfox libraries.
-
-
 repositories {
     jcenter(){url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/'}
 }
